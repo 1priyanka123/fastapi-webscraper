@@ -1,8 +1,8 @@
 import pdfplumber
 import tkinter as tk
 from tkinter import filedialog
-from langchain_community.vectorstores import Chroma  # ✅ Updated Import
-from langchain_community.embeddings import OllamaEmbeddings  # ✅ Updated Import
+from langchain_community.vectorstores import Chroma
+from langchain_community.embeddings import OllamaEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_ollama import ChatOllama
 
@@ -13,7 +13,7 @@ def extract_text_from_pdf(pdf_path):
     return text
 
 # Load Ollama embeddings model
-embedding_model = OllamaEmbeddings(model="llama3.2")  # ✅ Updated to LLaMA 3.2
+embedding_model = OllamaEmbeddings(model="llama3.2")
 
 # Function to create ChromaDB vector store
 def create_chroma_vector_store(pdf_text):
@@ -32,7 +32,7 @@ def retrieve_relevant_text(chroma_db, query):
     return retrieved_text
 
 # Load AI model using Ollama
-llm = ChatOllama(model="llama3.2")  # ✅ Updated to LLaMA 3.2
+llm = ChatOllama(model="llama3.2")
 
 # Function to generate chatbot response
 def chat_with_pdf(chroma_db, user_query):
